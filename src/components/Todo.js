@@ -69,7 +69,7 @@ const Todo  = () => {
                             style={{textDecoration: todoItem.completed ? 'line-through' : 'none', marginRight: '5px'}}>
                             {todoItem.id === editToDoID ? todo : todoItem.content} 
                         </span>
-                        <button onClick={() => handleEditTodo(todoItem.id)}>{editToDoID ? 'revert' : 'edit'}</button>
+                        <button onClick={() => handleEditTodo(todoItem.id)}>{todoItem.id === editToDoID ? 'revert' : 'edit'}</button>
                         <button onClick={() => handleDeleteTodo(todoItem.id)}>delete</button>
                     </li>
                 )}
