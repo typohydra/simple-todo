@@ -1,0 +1,88 @@
+$color-primary-blue: #191970;
+$color-secondary-blue: #3c3c81;
+$color-primary-white: #f5f5f5;
+$color-primary-red: #e64f4f;
+$color-secondary-red: #f47979;
+
+.main {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    max-width: 500px;
+    margin: auto;
+   
+    &__input {
+        padding: 5px;
+        height: 40px;
+
+        background-color: $color-primary-white;
+        font-size: 20px;
+
+        border: inset $color-primary-white;
+    }
+
+    &__btn {
+        background-color: $color-primary-blue;
+        color: $color-primary-white;
+        
+        padding: 5px;
+        border: none;
+
+        height: 40px;
+        font-size: 20px;
+
+        &:hover {
+            background-color: $color-secondary-blue;
+        }
+    }
+
+    &__ul {
+        font-size: 20px;
+        padding: 0;
+
+        &__li {
+            display: flex;
+            justify-content: space-between;
+            gap: 5px;
+            align-items: center;
+
+            padding: 5px;
+            margin-top: 5px;
+            min-height: 25px;
+            background-color: $color-primary-white;
+            word-break: break-all;
+
+            &__span {
+                flex-grow: 1;
+            }
+
+            &__btn {
+                color: $color-primary-white;
+                border: none;
+                padding: 0px 10px;
+
+                min-height: 25px;
+                max-height: 25px;
+            }
+
+            &__btn--edit {
+                background-color: $color-primary-blue;
+                min-width: 55px;
+
+                &:hover {
+                    background-color: $color-secondary-blue;
+                }
+            }
+
+            &__btn--delete {
+                background-color: $color-primary-red;
+                min-width: 57px;
+
+                &:hover {
+                    background-color: $color-secondary-red;
+                }
+            }
+        }
+    }
+}

@@ -1,3 +1,4 @@
+import "../style.scss"
 import React, { useState }  from 'react';
 const { v4: uuid } = require('uuid')
 
@@ -58,19 +59,19 @@ const Todo  = () => {
     }
 
     return (
-        <div>
-            <input onChange={handleInput} value={todo} type="text" placeholder='type todo'/>
-            <button onClick={editToDoID ? handleSaveEditTodo : handleAddTodo}>{editToDoID ? 'save edit' : 'add todo'}</button>
-            <ul>
+        <div className="main">
+            <input className="main__input" onChange={handleInput} value={todo} type="text" placeholder='type todo'/>
+            <button className="main__btn" onClick={editToDoID ? handleSaveEditTodo : handleAddTodo}>{editToDoID ? 'save edit' : 'add todo'}</button>
+            <ul className="main__ul">
                 {todos.map(todoItem =>
-                    <li key={todoItem.id}>
-                        <span 
+                    <li className="main__ul__li" key={todoItem.id}>
+                        <span className="main__ul__li__span"
                             onClick={() => handleToggleTodo(todoItem.id)} 
                             style={{textDecoration: todoItem.completed ? 'line-through' : 'none', marginRight: '5px'}}>
                             {todoItem.id === editToDoID ? todo : todoItem.content} 
                         </span>
-                        <button onClick={() => handleEditTodo(todoItem.id)}>{todoItem.id === editToDoID ? 'revert' : 'edit'}</button>
-                        <button onClick={() => handleDeleteTodo(todoItem.id)}>delete</button>
+                        <button className="main__ul__li__btn main__ul__li__btn--edit" onClick={() => handleEditTodo(todoItem.id)}>{todoItem.id === editToDoID ? 'revert' : 'edit'}</button>
+                        <button className="main__ul__li__btn main__ul__li__btn--delete" onClick={() => handleDeleteTodo(todoItem.id)}>delete</button>
                     </li>
                 )}
             </ul>
